@@ -1,22 +1,23 @@
 object NthSmallest extends App {
 
-
   def calculateSmallest(list: List[Int], n: Int): Int = {
-    if (list.nonEmpty) {
+match list {
 
-      list.indexOf(1)
+      case f => list.nonEmpty
+        val order = list.toSet.toList.sorted.reverse
+        println(order)
+        val nth = order(n)
+        nth
 
-    } else {
+      case b => list.isEmpty
+        throw new IllegalArgumentException("list is empty")
 
-      0
-
-
-      /*  val divided = list.map(x  => x / n) //= new val NList.head
-    println(divided)
-    divided.head*/
-    }
-  }
-    println(calculateSmallest(List(0,1,2), 1))
+      case _ =>
+        throw new IllegalArgumentException("No such element in list")
 
   }
+  println(calculateSmallest(List(0,1,1,2,3,4,5,6,7,8,9), 2))
+}
+
+
 
