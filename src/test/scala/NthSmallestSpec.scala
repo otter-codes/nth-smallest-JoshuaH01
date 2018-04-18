@@ -21,7 +21,7 @@ class NthSmallestSpec extends WordSpec with MustMatchers {
             val caught = intercept[IndexOutOfBoundsException] {
               NthSmallest.calculateSmallest(List(1,2,3,4,5,6,7,8,9), 12)
             }
-            assert(caught.getMessage == "No such element in list")
+            assert(caught.toString == "java.lang.IndexOutOfBoundsException: 11")
           }
       }
     }
